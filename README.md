@@ -1,4 +1,4 @@
-# savge
+# Sistema de Apoio ao Visitante em Grandes Eventos
 
 ## Project setup
 ```
