@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <!-- <div>
     <v-footer dark padless>
       <v-card flat tile class="indigo lighten-1 white--text text-center">
         <v-card-text>
@@ -24,7 +24,10 @@
         </v-card-text>
       </v-card>
     </v-footer>
-  </div>
+  </div>-->
+  <v-footer app>
+    <span>&copy; {{ new Date().getFullYear() }}</span>
+  </v-footer>
 </template>
 
 <script>

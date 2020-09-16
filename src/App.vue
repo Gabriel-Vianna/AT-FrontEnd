@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app id="inspire">
     <Cabecalho />
     <router-view></router-view>
     <Rodape />
