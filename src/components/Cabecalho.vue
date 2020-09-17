@@ -1,13 +1,15 @@
 <template>
-  <header class="showcase">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <h1>Sistema de Apoio ao Visitante</h1>
+  <router-link to="/" class="router-link">
+    <header class="showcase">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h1>Sistema de Apoio ao Visitante</h1>
+          </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
+  </router-link>
 </template>
 
 <script>
@@ -19,6 +21,10 @@ export default {
 <style scoped>
 * {
   font-family: "Open Sans", sans-serif;
+}
+
+.router-link {
+  text-decoration: none;
 }
 
 .showcase {

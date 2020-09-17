@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="principal">
-      <h1>Nome do evento</h1>
-      <div class="image"></div>
+      <h1>{{nome}}</h1>
+      <div class="image" v-bind:style="{ backgroundImage: 'url(' + src + ')' }"></div>
       <div class="content">
         <div class="div-section">
           <section>
             <div class="section-item">
-              <h2>Descrição do evento</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <h2>Sobre</h2>
+              <p>{{descricao}}</p>
             </div>
             <div class="section-item">
               <h2>Quando</h2>
@@ -113,33 +113,18 @@
 import GoogleMap from "../components/GoogleMap";
 
 export default {
-  data: () => ({
-    drawer: null
-  }),
   computed: {
-    origem: {
-      get() {
-        return this.$store.state.origem;
-      },
-      set(value) {
-        this.$store.commit("SET_ORIGEM", value);
-      }
+    nome() {
+      return this.$store.state.evento.nome;
     },
-    destino: {
-      get() {
-        return this.$store.state.destino;
-      },
-      set(value) {
-        this.$store.commit("SET_DESTINO", value);
-      }
+    src() {
+      return this.$store.state.evento.src;
     },
-    evento: {
-      get() {
-        return "Informações sobre " + this.$store.state.evento;
-      },
-      set(value) {
-        this.$store.commit("SET_EVENTO", value);
-      }
+    lugar() {
+      return this.$store.state.evento.lugar;
+    },
+    descricao() {
+      return this.$store.state.evento.descricao;
     }
   },
   components: {
@@ -152,10 +137,14 @@ export default {
 .principal {
   margin: 80px auto;
 }
+
+.principal h1 {
+  margin: 0 6% 20px;
+}
 .image {
-  height: 40vh;
-  background: url("../assets/maracana.jpg");
+  height: 45vh;
   background-size: cover;
+  background-position: center center;
   margin-bottom: 20px;
 }
 

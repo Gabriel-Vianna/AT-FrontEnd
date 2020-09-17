@@ -7,7 +7,12 @@ export default new Vuex.Store({
   state: {
     origem: "",
     destino: "",
-    evento: ""
+    evento: {
+      nome: "",
+      src: "",
+      lugar: "",
+      descricao: ""
+    }
   },
   getters: {
     getOrigem(state) {
@@ -16,7 +21,7 @@ export default new Vuex.Store({
     getDestino(state) {
       return state.destino;
     },
-    getEvento(state){
+    getEvento(state) {
       return state.evento;
     }
   },
@@ -27,8 +32,17 @@ export default new Vuex.Store({
     SET_DESTINO(state, payload) {
       state.destino = payload;
     },
-    SET_EVENTO(state, payload) {
-      state.evento = payload;
+    SET_NOME(state, payload) {
+      state.evento.nome = payload;
+    },
+    SET_SRC(state, payload) {
+      state.evento.src = payload;
+    },
+    SET_LUGAR(state, payload) {
+      state.evento.lugar = payload;
+    },
+    SET_DESCRICAO(state, payload) {
+      state.evento.descricao = payload;
     }
   },
   actions: {
