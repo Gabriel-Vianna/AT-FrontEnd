@@ -1,9 +1,9 @@
 <template>
-  <v-app id="inspire">
+  <div>
     <Cabecalho />
     <router-view></router-view>
     <Rodape />
-  </v-app>
+  </div>
 </template>
 
 <script>
