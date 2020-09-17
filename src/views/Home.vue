@@ -9,7 +9,7 @@
           <div class="card_content">
             <h2 class="card_title">{{card.title}}</h2>
             <p class="card_text">{{card.description}}</p>
-            <button class="btn card_btn">Ver evento</button>
+            <button class="btn card_btn" @click="buscarLocal(card.place, card.title)">Ver evento</button>
           </div>
         </div>
       </li>
