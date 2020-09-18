@@ -3,36 +3,52 @@
     "titulo": "Final do Campeonato Carioca",
     "src": "https://portalcorreio.com.br/wp-content/uploads/2020/06/Maracan%C3%A3-Foto-Carolina-Antunes-PR-Fotos-P%C3%BAblicas.jpg",
     "lugar": "Estádio Maracanã",
-    "descricao": "O grande clássico, Flamengo x Fluminense, valendo título do Carioca."
+    "descricao": "O campeonato do atual Estado do Rio de Janeiro é disputado desde 1979, após a fusão entre a Federação Carioca de Futebol e a Federação Fluminense de Futebol, formando a FERJ, em setembro de 1978, três anos depois da fusão entre o Estado da Guanabara e o antigo Estado do Rio de Janeiro, cuja capital era Niterói. Até então, existiam os campeonatos Carioca e Fluminense, além do Fluminense de Seleções."
   },
   {
     "titulo": "Orquestra Sinfônica Brasileira",
     "src": "https://ogimg.infoglobo.com.br/in/20171863-620-e53/FT1086A/652/2016-900023562-2016-899674435-13257216344_f7fe7b4063_o.jpg_20160331.jpg_2016.jpg",
     "lugar": "Teatro Municipal RJ",
-    "descricao": "A Orquestra Sinfônica Brasileira é uma das mais importantes orquestras brasileiras e tem 80 anos de existência. Sua sede situa-se na Avenida Rio Branco, no centro do Rio de Janeiro."
+    "descricao": "A criação da OSB foi iniciativa de três professores da Escola Nacional de Música - Djalma Soares, Antão Soares e Antônio Leopardi. Empolgados com a apresentação da Orquestra NBC em turnê pelo Brasil, sob regência de Arturo Toscanini, procuraram o maestro José Siqueira para que tomasse a iniciativa.[2] Com o apoio de personalidades empresariais e políticas, e contando com divulgação especial no jornal O Globo, surgiu como Sociedade Anônima em 1940. O concerto inaugural foi em 11 de julho de 1940, data escolhida em homenagem ao compositor Carlos Gomes. Como primeiro diretor artístico foi indicado o regente húngaro exilado no Brasil - Eugen Szenkar.",
+    "datas": [
+      "2020-10-30"
+    ]
   },
   {
     "titulo": "Rock in Rio",
-    "src": "https://portalcorreio.com.br/wp-content/uploads/2020/06/Maracan%C3%A3-Foto-Carolina-Antunes-PR-Fotos-P%C3%BAblicas.jpg",
+    "src": "https://www.sindrio.com.br/wp-content/uploads/2019/10/rock-in-rio-i-hate-flash.jpg",
     "lugar": "Parque Olímpico RJ",
-    "descricao": "O Rock in Rio é um festival de música idealizado pelo empresário brasileiro Roberto Medina pela primeira vez em 1985, sendo, desde sua criação, reconhecidamente, o maior festival musical do planeta."
+    "descricao": "O Rock in Rio é um festival de música idealizado pelo empresário brasileiro Roberto Medina pela primeira vez em 1985, sendo, desde sua criação, reconhecidamente, o maior festival musical do planeta. Foi originalmente organizado no Rio de Janeiro, de onde vem o nome. Tornou-se um evento de repercussão em nível mundial e, em 2004, teve a sua primeira edição fora do Brasil em Lisboa, Portugal. O festival é considerado o oitavo melhor do mundo pelo site especializado Festival Fling.[4] A última edição do festival aconteceu em 2019 dentro do Parque Olímpico do Rio de Janeiro.",
+    "datas": [
+      "2020-10-30"
+    ]
   },
   {
     "titulo": "Circuito Mundial de Surfe",
     "src": "https://surfvix.com.br/wp-content/uploads/2019/03/Crowd-Oi-Rio-pro-2018-Saquarema-itauna.jpg",
     "lugar": "Saquarema RJ",
-    "descricao": "A cidade de Saquarema sediará etapa do Mundial de Surfe"
+    "descricao": "Os melhores atletas do surfe mundial estarão em Saquarema entre os dias 18 e 27 de junho. É datas acontece a edição 2020 da Oi Rio Pro, a etapa brasileira do Circuito Mundial de Surfe, promovido pela World Surf League (WSL). A etapa de Saquarema terá início quatro dias após o término da etapa de Grajagan, na Indonésia, que retorna ao calendário após 20 anos.",
+    "datas": [
+      "2020-10-30"
+    ]
   },
   {
     "titulo": "Rio Open",
     "src": "https://conteudo.imguol.com.br/c/esporte/3e/2020/08/24/hard-rock-stadium-sede-do-miami-open-de-tenis-em-2019-1598303393328_v2_1920x1080.jpg",
     "lugar": "Jockey Club RJ",
-    "descricao": "O Rio Open é o maior torneio de tênis da América do Sul"
+    "descricao": "O ATP do Rio de Janeiro é um torneio de tênis sediado no Jockey Club Brasileiro, na cidade do Rio de Janeiro. As partidas são disputadas em quadras abertas de saibro. Sendo no total nove quadras do Jockey: quatro para treinos e cinco para as disputas. A quadra principal tem capacidade para 6.200 torcedores.",
+    "datas": [
+      "2020-10-30"
+    ]
   },
   {
-    "titulo": "Desfile das Escolas de Samba do Rio",
+    "titulo": "Desfile das Escolas de Samba",
     "src": "https://exame.com/wp-content/uploads/2016/09/size_960_16_9_sapucai-noite.jpg",
     "lugar": "Marquês de Sapucaí",
-    "descricao": "Desfile das escolas de samba do grupo especial"
+    "descricao": "As doze melhores escolas de samba realizam um grandioso show no domingo  e na segunda-feira de Carnaval no Sambódromo, antecedidas pelo Grupo de Acesso na sexta e no sábado. Os desfiles das escolas de samba são uma explosão de cores, ritmo, dança, felicidade e muito mais. É uma época em que as pessoas ficam à vontade para se transformar no que quiserem. O melhor é que não há distinção de raças ou status. Todos têm o mesmo objetivo, que é o de aproveitar o Carnaval.",
+    "datas": [
+      "2020-02-20",
+      "2020-03-20"
+    ]
   }
 ]

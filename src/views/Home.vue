@@ -24,7 +24,7 @@
 import { mapMutations } from "vuex";
 import router from "../router/";
 
-const events = require('../eventos');
+const events = require("../eventos");
 
 export default {
   name: "Home",
