@@ -1,36 +1,36 @@
 [
   {
-    "nome": "Final do Campeonato Carioca",
+    "titulo": "Final do Campeonato Carioca",
     "src": "https://portalcorreio.com.br/wp-content/uploads/2020/06/Maracan%C3%A3-Foto-Carolina-Antunes-PR-Fotos-P%C3%BAblicas.jpg",
     "lugar": "Estádio Maracanã",
     "descricao": "O grande clássico, Flamengo x Fluminense, valendo título do Carioca."
   },
   {
-    "nome": "Orquestra Sinfônica Brasileira",
+    "titulo": "Orquestra Sinfônica Brasileira",
     "src": "https://ogimg.infoglobo.com.br/in/20171863-620-e53/FT1086A/652/2016-900023562-2016-899674435-13257216344_f7fe7b4063_o.jpg_20160331.jpg_2016.jpg",
     "lugar": "Teatro Municipal RJ",
     "descricao": "A Orquestra Sinfônica Brasileira é uma das mais importantes orquestras brasileiras e tem 80 anos de existência. Sua sede situa-se na Avenida Rio Branco, no centro do Rio de Janeiro."
   },
   {
-    "nome": "Rock in Rio",
+    "titulo": "Rock in Rio",
     "src": "https://portalcorreio.com.br/wp-content/uploads/2020/06/Maracan%C3%A3-Foto-Carolina-Antunes-PR-Fotos-P%C3%BAblicas.jpg",
     "lugar": "Parque Olímpico RJ",
     "descricao": "O Rock in Rio é um festival de música idealizado pelo empresário brasileiro Roberto Medina pela primeira vez em 1985, sendo, desde sua criação, reconhecidamente, o maior festival musical do planeta."
   },
   {
-    "nome": "Circuito Mundial de Surfe",
+    "titulo": "Circuito Mundial de Surfe",
     "src": "https://surfvix.com.br/wp-content/uploads/2019/03/Crowd-Oi-Rio-pro-2018-Saquarema-itauna.jpg",
     "lugar": "Saquarema RJ",
     "descricao": "A cidade de Saquarema sediará etapa do Mundial de Surfe"
   },
   {
-    "nome": "Rio Open",
-    "src": "https://lh3.googleusercontent.com/proxy/gXn87il54lutxb25eVx-zASSN3E8EPICp50eXlNo92eOTqvVyqIHRbyr8GJbtKPTkmv24psCEb0vKpuH0lmfx2pa6x2RdYw3-RMSHh9QRCYvpbmIgywdaHBCZoWJxTaIKSir7cnQa9L-C9GwOmnm18Ew9-o",
+    "titulo": "Rio Open",
+    "src": "https://conteudo.imguol.com.br/c/esporte/3e/2020/08/24/hard-rock-stadium-sede-do-miami-open-de-tenis-em-2019-1598303393328_v2_1920x1080.jpg",
     "lugar": "Jockey Club RJ",
     "descricao": "O Rio Open é o maior torneio de tênis da América do Sul"
   },
   {
-    "nome": "Desfile das Escolas de Samba do Rio",
+    "titulo": "Desfile das Escolas de Samba do Rio",
     "src": "https://exame.com/wp-content/uploads/2016/09/size_960_16_9_sapucai-noite.jpg",
     "lugar": "Marquês de Sapucaí",
     "descricao": "Desfile das escolas de samba do grupo especial"

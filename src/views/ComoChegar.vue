@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="principal">
-      <h1>{{nome}}</h1>
       <div class="image" v-bind:style="{ backgroundImage: 'url(' + src + ')' }"></div>
+      <h1>{{nome}}</h1>
       <div class="content">
         <div class="div-section">
           <section>
@@ -134,9 +134,6 @@ export default {
 </script>
 
 <style scoped>
-.principal {
-  margin: 80px auto;
-}
 
 .principal h1 {
   margin: 0 6% 20px;

@@ -23,6 +23,11 @@ export default {
   font-family: "Open Sans", sans-serif;
 }
 
+h1{
+  color: #1993DF;
+  font-size: 20px;
+}
+
 .router-link {
   text-decoration: none;
 }
@@ -30,24 +35,14 @@ export default {
 .showcase {
   overflow: hidden;
   color: #fff;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   position: relative;
   align-items: center;
   display: flex;
   justify-content: center;
-  height: 20vh;
+  height: 10vh;
   text-align: center;
   margin: auto;
-  background: linear-gradient(
-      to bottom,
-      rgba(43, 25, 25, 0.7) 0%,
-      rgba(37, 29, 29, 0.7) 100%
-    ),
-    url("../assets/gig_crowd.jpg");
-  background-size: cover;
-  background-position: center center;
+  background-color: #fff;
+  border-bottom: 1px solid #E0E0E0;
 }
 </style>

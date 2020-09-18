@@ -8,7 +8,7 @@
           </div>
           <div class="card_content">
             <h2 class="card_title">{{card.titulo}}</h2>
-            <p class="card_text">{{card.descricao}}</p>
+            <p class="card_text">{{card.descricao | formatDescription}}</p>
             <button
               class="btn card_btn"
               @click="buscarLocal(card.titulo, card.src, card.lugar, card.descricao)"
@@ -24,54 +24,13 @@
 import { mapMutations } from "vuex";
 import router from "../router/";
 
+const events = require('../eventos');
+
 export default {
   name: "Home",
   data() {
     return {
-      cards: [
-        {
-          titulo: "Final Campeonato Carioca",
-          src:
-            "https://portalcorreio.com.br/wp-content/uploads/2020/06/Maracan%C3%A3-Foto-Carolina-Antunes-PR-Fotos-P%C3%BAblicas.jpg",
-          lugar: "Estadio Maracanã",
-          descricao: "Fla X Flu"
-        },
-        {
-          titulo: "Orquestra Sinfônica Brasileira",
-          src:
-            "https://ogimg.infoglobo.com.br/in/20171863-620-e53/FT1086A/652/2016-900023562-2016-899674435-13257216344_f7fe7b4063_o.jpg_20160331.jpg_2016.jpg",
-          lugar: "Teatro Municipal RJ",
-          descricao: "Apresentação inédita"
-        },
-        {
-          titulo: "Rock in Rio",
-          src:
-            "https://s2.glbimg.com/Syw2x49Z10vsyVxu7_Rb6XGQvtI=/0x0:8265x4921/1008x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2018/T/M/u5TbvYSCWAh2Q6URAzMA/02156-rockinrio-2019-003.jpg",
-          lugar: "Parque Olímpico RJ",
-          descricao: "O maior festival de música do mundo"
-        },
-        {
-          titulo: "Circuito Mundial de Surfe",
-          src:
-            "https://i1.wp.com/www.hawaiisurfpoint.com.br/wp-content/uploads/2017/01/saiba-mais-sobre-as-principais-competicoes-de-surf-do-mundo.jpeg?fit=1000%2C667&ssl=1",
-          lugar: "Saquarema RJ",
-          descricao: "A cidade sediará etapa do Mundial de Surfe"
-        },
-        {
-          titulo: "Rio Open",
-          src:
-            "https://diariodorio.com/wp-content/uploads/2020/02/Rio-Open--scaled.jpg",
-          lugar: "Jockey Club RJ",
-          descricao: "O Rio Open é o maior torneio de tênis da América "
-        },
-        {
-          titulo: "Desfile das Escolas de Samba - RJ",
-          src:
-            "https://imagens.ebc.com.br/_txi3eNt5XzAEvLElXs867nV5jg=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/atoms/image/906179-%20desfile%20_escolas%20de%20samba_rio%20de%20janeiro03.jpg?itok=6uSNYirv",
-          lugar: "Marquês de Sapucaí",
-          descricao: "Desfile das escolas de samba do grupo especial"
-        }
-      ]
+      cards: events
     };
   },
   components: {},

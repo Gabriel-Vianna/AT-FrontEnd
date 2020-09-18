@@ -9,6 +9,11 @@ import * as VueGoogleMaps from "vue2-google-maps";
 
 Vue.config.productionTip = false
 
+Vue.filter('formatDescription', (string) => {
+  string = string.substring(0, 180);
+  return string + '...';
+})
+
 Vue.use(VueGoogleMaps, {
   load: {
     key: "AIzaSyBQuJbfSamozKoKyFsnhYYgZIufPYNETME",
