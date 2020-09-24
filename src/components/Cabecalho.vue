@@ -23,8 +23,8 @@ export default {
   font-family: "Open Sans", sans-serif;
 }
 
-h1{
-  color: #1993DF;
+h1 {
+  color: #1993df;
   font-size: 20px;
 }
 
@@ -39,10 +39,10 @@ h1{
   align-items: center;
   display: flex;
   justify-content: center;
-  height: 10vh;
+  height: 14vh;
   text-align: center;
   margin: auto;
   background-color: #fff;
-  border-bottom: 1px solid #E0E0E0;
+  border-bottom: 1px solid #e0e0e0;
 }
 </style>

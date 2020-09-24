@@ -9,12 +9,14 @@ export default new Vuex.Store({
     destino: "",
     lat: "",
     lng: "",
-    evento: {
-      nome: "",
-      src: "",
-      lugar: "",
-      descricao: ""
-    }
+    // evento: {
+    //   nome: "",
+    //   src: "",
+    //   lugar: "",
+    //   descricao: ""
+    // },
+    eventoAtual: {},
+    eventos: []
   },
   getters: {
     getOrigem(state) {
@@ -34,34 +36,47 @@ export default new Vuex.Store({
     SET_DESTINO(state, payload) {
       state.destino = payload;
     },
-    SET_NOME(state, payload) {
-      state.evento.nome = payload;
+    // SET_NOME(state, payload) {
+    //   state.evento.nome = payload;
+    // },
+    // SET_SRC(state, payload) {
+    //   state.evento.src = payload;
+    // },
+    // SET_LUGAR(state, payload) {
+    //   state.evento.lugar = payload;
+    // },
+    // SET_DESCRICAO(state, payload) {
+    //   state.evento.descricao = payload;
+    // },
+    SET_LAT(state, payload) {
+      state.lat = payload;
     },
-    SET_SRC(state, payload) {
-      state.evento.src = payload;
+    SET_LNG(state, payload) {
+      state.lng = payload;
     },
-    SET_LUGAR(state, payload) {
-      state.evento.lugar = payload;
+    SET_EVENTOS(state, payload) {
+      state.eventos = payload;
     },
-    SET_DESCRICAO(state, payload) {
-      state.evento.descricao = payload;
-    },
-    SET_LAT(state, payload){
-      state.evento.lat = payload;
-    },
-    SET_LNG(state, payload){
-      state.evento.lng = payload;
+    SET_EVENTO(state, id) {
+      for (let evento of state.eventos) {
+        if (evento.id === id) {
+          state.eventoAtual = evento
+        }
+      }
     }
   },
   actions: {
+    setEvento(context, payload) {
+      context.commit("SET_EVENTO", payload);
+    },
+    setEventos(context, payload) {
+      context.commit("SET_EVENTOS", payload);
+    },
     setOrigem(context, payload) {
       context.commit("SET_ORIGEM", payload);
     },
     setDestino(context, payload) {
       context.commit("SET_DESTINO", payload);
-    },
-    setEvento(context, payload) {
-      context.commit("SET_EVENTO", payload);
     },
     setLat(context, payload) {
       context.commit("SET_LAT", payload);
