@@ -10,12 +10,6 @@ export default new Vuex.Store({
     lat: "",
     lng: "",
     restaurantes: [],
-    // evento: {
-    //   nome: "",
-    //   src: "",
-    //   lugar: "",
-    //   descricao: ""
-    // },
     eventoAtual: {},
     eventos: []
   },
@@ -39,19 +33,8 @@ export default new Vuex.Store({
     },
     adicionarRestaurantes(state, payload){
       state.restaurantes.push(payload);
+      console.log(payload);
     },
-    // SET_NOME(state, payload) {
-    //   state.evento.nome = payload;
-    // },
-    // SET_SRC(state, payload) {
-    //   state.evento.src = payload;
-    // },
-    // SET_LUGAR(state, payload) {
-    //   state.evento.lugar = payload;
-    // },
-    // SET_DESCRICAO(state, payload) {
-    //   state.evento.descricao = payload;
-    // },
     SET_LAT(state, payload) {
       state.lat = payload;
     },

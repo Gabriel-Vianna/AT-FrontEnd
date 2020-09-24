@@ -23,8 +23,6 @@
             </div>
           </section>
           <section>
-            <!-- <h2>Local</h2> -->
-            <!-- <img src="../assets/rectangle.png" alt /> -->
             <div>
               <google-map />
             </div>
@@ -33,16 +31,8 @@
         <h3>Onde comer:</h3>
         <div class="main">
           <ul class="cards">
-            <li class="cards_item">
-              <div class="card">
-                <div class="card_image">
-                  <img src="https://picsum.photos/500/300/?image=10" />
-                </div>
-                <div class="card_content">
-                  <h2 class="card_title">Card Grid Layout</h2>
-                  <p class="card_text">draco dormiens nunquam titillandus</p>
-                </div>
-              </div>
+            <li class="cards_item" v-for="restaurante in restaurantes" :key="restaurante.restaurante">
+              <Card :restaurante="restaurante"></Card>
             </li>
           </ul>
         </div>
@@ -53,12 +43,14 @@
 
 <script>
 import GoogleMap from "../components/GoogleMap";
+import Card from "../components/Card";
 import { mapState } from "vuex";
 
 export default {
   name: "ComoChegar",
   components: {
-    GoogleMap
+    GoogleMap,
+    Card
   },
   computed: {
     ...mapState(["eventoAtual", "restaurantes"])

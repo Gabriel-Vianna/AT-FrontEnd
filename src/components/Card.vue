@@ -14,9 +14,13 @@
         <slot name="botao"></slot>
       </div>
     </div>
+  </div>
 </template>
 <script>
 export default {
-  name: "Card"
+  name: "Card",
+  props: {
+    restaurante: {}
+  }
 }
 </script>
