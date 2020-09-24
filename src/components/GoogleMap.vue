@@ -3,8 +3,9 @@
     <div>
       <!-- <h2>Search and add a pin</h2> -->
       <label>
-        <gmap-autocomplete @place_changed="setPlace"></gmap-autocomplete>
-        <button @click="addMarker">Add</button>
+        <h4>{{ nomeEvento }}</h4>
+        <!-- <gmap-autocomplete @place_changed="setPlace"></gmap-autocomplete>
+        <button @click="addMarker">Add</button> -->
       </label>
       <!-- <br /> -->
     </div>
@@ -33,27 +34,41 @@ export default {
       currentPlace: null
     };
   },
+  computed: {
+    lat() {
+      return this.$store.state.evento.lat;
+    },
+    lng() {
+      return this.$store.state.evento.lng;
+    },
+    nomeEvento(){
+      return this.$store.state.evento.lugar;
+    }
+  },
 
   mounted() {
-    this.geolocate();
+    // this.geolocate();
+    this.addMarker();
   },
 
   methods: {
     // receives a place object via the autocomplete component
     setPlace(place) {
       this.currentPlace = place;
+      console.log(JSON.parse(JSON.stringify(this.lat)));
     },
     addMarker() {
-      if (this.currentPlace) {
+      // if (this.currentPlace) {
+        // lat: -22.9121089, lng: -43.2301558
         const marker = {
-          lat: this.currentPlace.geometry.location.lat(),
-          lng: this.currentPlace.geometry.location.lng()
+          lat: this.lat,
+          lng: this.lng
         };
         this.markers.push({ position: marker });
         this.places.push(this.currentPlace);
         this.center = marker;
         this.currentPlace = null;
-      }
+      // }
     },
     geolocate: function() {
       navigator.geolocation.getCurrentPosition(position => {

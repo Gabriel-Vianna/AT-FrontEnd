@@ -27,7 +27,7 @@
             </div>
           </section>
           <section>
-            <h2>Local</h2>
+            <!-- <h2>Local</h2> -->
             <!-- <img src="../assets/rectangle.png" alt /> -->
             <div>
               <google-map />

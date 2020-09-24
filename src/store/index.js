@@ -7,6 +7,8 @@ export default new Vuex.Store({
   state: {
     origem: "",
     destino: "",
+    lat: "",
+    lng: "",
     evento: {
       nome: "",
       src: "",
@@ -43,6 +45,12 @@ export default new Vuex.Store({
     },
     SET_DESCRICAO(state, payload) {
       state.evento.descricao = payload;
+    },
+    SET_LAT(state, payload){
+      state.evento.lat = payload;
+    },
+    SET_LNG(state, payload){
+      state.evento.lng = payload;
     }
   },
   actions: {
@@ -54,6 +62,12 @@ export default new Vuex.Store({
     },
     setEvento(context, payload) {
       context.commit("SET_EVENTO", payload);
+    },
+    setLat(context, payload) {
+      context.commit("SET_LAT", payload);
+    },
+    setLng(context, payload) {
+      context.commit("SET_LNG", payload);
     }
   },
   modules: {

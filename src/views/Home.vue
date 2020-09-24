@@ -11,7 +11,7 @@
             <p class="card_text">{{card.descricao | formatDescription}}</p>
             <button
               class="btn card_btn"
-              @click="buscarLocal(card.titulo, card.src, card.lugar, card.descricao)"
+              @click="buscarLocal(card.titulo, card.src, card.lugar, card.descricao, card.lat, card.lng)"
             >Ver evento</button>
           </div>
         </div>
@@ -38,7 +38,7 @@ export default {
     ...mapMutations[("SET_DESTINO", "SET_EVENTO")]
   },
   methods: {
-    buscarLocal(titulo, src, lugar, descricao) {
+    buscarLocal(titulo, src, lugar, descricao, lat, lng) {
       lugar.toString();
       titulo.toString();
       this.$store.commit("SET_DESTINO", lugar);
@@ -46,6 +46,8 @@ export default {
       this.$store.commit("SET_SRC", src);
       this.$store.commit("SET_LUGAR", lugar);
       this.$store.commit("SET_DESCRICAO", descricao);
+      this.$store.commit("SET_LAT", lat);
+      this.$store.commit("SET_LNG", lng);
       router.push({ path: "como-chegar" });
     }
   }
