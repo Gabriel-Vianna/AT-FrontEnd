@@ -5,7 +5,7 @@
       <label>
         <h4>{{ nomeEvento }}</h4>
         <!-- <gmap-autocomplete @place_changed="setPlace"></gmap-autocomplete>
-        <button @click="addMarker">Add</button> -->
+        <button @click="addMarker">Add</button>-->
       </label>
       <!-- <br /> -->
     </div>
@@ -36,13 +36,13 @@ export default {
   },
   computed: {
     lat() {
-      return this.$store.state.evento.lat;
+      return this.$store.state.eventoAtual.lat;
     },
     lng() {
-      return this.$store.state.evento.lng;
+      return this.$store.state.eventoAtual.lng;
     },
-    nomeEvento(){
-      return this.$store.state.evento.lugar;
+    nomeEvento() {
+      return this.$store.state.eventoAtual.lugar;
     }
   },
 
@@ -59,15 +59,15 @@ export default {
     },
     addMarker() {
       // if (this.currentPlace) {
-        // lat: -22.9121089, lng: -43.2301558
-        const marker = {
-          lat: this.lat,
-          lng: this.lng
-        };
-        this.markers.push({ position: marker });
-        this.places.push(this.currentPlace);
-        this.center = marker;
-        this.currentPlace = null;
+      // lat: -22.9121089, lng: -43.2301558
+      const marker = {
+        lat: this.lat,
+        lng: this.lng
+      };
+      this.markers.push({ position: marker });
+      this.places.push(this.currentPlace);
+      this.center = marker;
+      this.currentPlace = null;
       // }
     },
     geolocate: function() {

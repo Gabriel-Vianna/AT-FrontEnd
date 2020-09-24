@@ -1,18 +1,15 @@
 <template>
   <div class="main">
     <ul class="cards">
-      <li v-for="card in cards" :key="card.titulo" class="cards_item">
+      <li v-for="evento in eventos" :key="evento.titulo" class="cards_item">
         <div class="card">
-          <div class="card_image" v-bind:style="{ backgroundImage: 'url(' + card.src + ')' }">
-            <img :src="card.src" />
+          <div class="card_image">
+            <img :src="evento.src" />
           </div>
           <div class="card_content">
-            <h2 class="card_title">{{card.titulo}}</h2>
-            <p class="card_text">{{card.descricao | formatDescription}}</p>
-            <button
-              class="btn card_btn"
-              @click="buscarLocal(card.titulo, card.src, card.lugar, card.descricao, card.lat, card.lng)"
-            >Ver evento</button>
+            <h2 class="card_title">{{evento.titulo}}</h2>
+            <p class="card_text">{{evento.descricao | formatDescription}}</p>
+            <button @click="buscarLocal(evento.id)" class="btn card_btn">Ver evento</button>
           </div>
         </div>
       </li>
@@ -21,7 +18,7 @@
 </template>
 
 <script>
-import { mapMutations } from "vuex";
+import { mapState } from "vuex";
 import router from "../router/";
 
 const events = require("../eventos");
@@ -30,26 +27,34 @@ export default {
   name: "Home",
   data() {
     return {
-      cards: events
+      cards: []
     };
   },
-  components: {},
   computed: {
-    ...mapMutations[("SET_DESTINO", "SET_EVENTO")]
+    ...mapState(["eventos"])
   },
   methods: {
-    buscarLocal(titulo, src, lugar, descricao, lat, lng) {
-      lugar.toString();
-      titulo.toString();
-      this.$store.commit("SET_DESTINO", lugar);
-      this.$store.commit("SET_NOME", titulo);
-      this.$store.commit("SET_SRC", src);
-      this.$store.commit("SET_LUGAR", lugar);
-      this.$store.commit("SET_DESCRICAO", descricao);
-      this.$store.commit("SET_LAT", lat);
-      this.$store.commit("SET_LNG", lng);
-      router.push({ path: "como-chegar" });
-    }
+    buscarLocal(id) {
+      this.$store.dispatch("setEvento", id);
+      router.push({ name: "ComoChegar" });
+      this.$store.dispatch("restaurantes");
+    },
+  },
+  beforeMount() {
+    events.forEach(element => {
+      this.cards.push({
+        titulo: element.titulo,
+        id: element.id,
+        src: element.src,
+        lugar: element.lugar,
+        lat: element.lat,
+        lng: element.lng,
+        descricao: element.descricao,
+        datas: element.datas,
+        ingressos: element.ingressos
+      });
+    });
+    this.$store.dispatch("setEventos", this.cards);
   }
 };
 </script>
@@ -68,19 +73,6 @@ export default {
   height: 55%;
 }
 
-html {
-  background-color: #ecf9ff;
-}
-
-body {
-  color: #272727;
-  font-family: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 0;
-  padding: 1rem;
-}
-
 .main {
   max-width: 1200px;
   margin: 80px auto;
@@ -89,12 +81,7 @@ body {
 h1 {
   font-size: 24px;
   font-weight: 400;
-  font-family: "Open Sans", sans-serif;
   text-align: center;
-}
-
-h2 {
-  font-family: "Open Sans", sans-serif;
 }
 
 img {
@@ -161,9 +148,8 @@ img {
 
 .card_title {
   color: #000000;
-  font-family: "Open Sans", sans-serif;
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 1px;
   text-transform: capitalize;
   margin: 0 0 10px 0;

@@ -3,27 +3,23 @@
     <div class="principal">
       <div
         class="image"
-        v-bind:style="{ backgroundImage: 'url(' + src + ')', backgroundSize: 'cover', backgroundPosition: 'center center' }"
+        v-bind:style="{ backgroundImage: 'url(' + eventoAtual.src + ')', backgroundSize: 'cover', backgroundPosition: 'center center' }"
       ></div>
-      <h1>{{nome}}</h1>
+      <h1>{{eventoAtual.titulo}}</h1>
       <div class="content">
         <div class="div-section">
           <section>
             <div class="section-item">
               <h2>Sobre</h2>
-              <p>{{descricao}}</p>
+              <p>{{eventoAtual.descricao}}</p>
             </div>
             <div class="section-item">
               <h2>Quando</h2>
-              <p>Sed ut perspiciatis unde</p>
-              <p>Sed ut perspiciatis unde</p>
-              <p>Sed ut perspiciatis unde</p>
+              <p v-for="(data, index) in eventoAtual.datas" :key="index">{{data}}</p>
             </div>
             <div class="section-item">
               <h2>Ingressos</h2>
-              <p>Sed ut perspiciatis unde</p>
-              <p>Sed ut perspiciatis unde</p>
-              <p>Sed ut perspiciatis unde</p>
+              <p>{{eventoAtual.ingressos}}</p>
             </div>
           </section>
           <section>
@@ -48,63 +44,6 @@
                 </div>
               </div>
             </li>
-            <li class="cards_item">
-              <div class="card">
-                <div class="card_image">
-                  <img src="https://picsum.photos/500/300/?image=5" />
-                </div>
-                <div class="card_content">
-                  <h2 class="card_title">Card Grid Layout</h2>
-                  <p
-                    class="card_text"
-                  >Demo of pixel perfect pure CSS simple responsive card grid layout</p>
-                </div>
-              </div>
-            </li>
-            <li class="cards_item">
-              <div class="card">
-                <div class="card_image">
-                  <img src="https://picsum.photos/500/300/?image=11" />
-                </div>
-                <div class="card_content">
-                  <h2 class="card_title">Card Grid Layout</h2>
-                  <p class="card_text">draco dormiens nunquam titillandus</p>
-                </div>
-              </div>
-            </li>
-            <li class="cards_item">
-              <div class="card">
-                <div class="card_image">
-                  <img src="https://picsum.photos/500/300/?image=14" />
-                </div>
-                <div class="card_content">
-                  <h2 class="card_title">Card Grid Layout</h2>
-                  <p class="card_text">draco dormiens nunquam titillandus</p>
-                </div>
-              </div>
-            </li>
-            <li class="cards_item">
-              <div class="card">
-                <div class="card_image">
-                  <img src="https://picsum.photos/500/300/?image=17" />
-                </div>
-                <div class="card_content">
-                  <h2 class="card_title">Card Grid Layout</h2>
-                  <p class="card_text">draco dormiens nunquam titillandus</p>
-                </div>
-              </div>
-            </li>
-            <li class="cards_item">
-              <div class="card">
-                <div class="card_image">
-                  <img src="https://picsum.photos/500/300/?image=2" />
-                </div>
-                <div class="card_content">
-                  <h2 class="card_title">Card Grid Layout</h2>
-                  <p class="card_text">draco dormiens nunquam titillandus</p>
-                </div>
-              </div>
-            </li>
           </ul>
         </div>
       </div>
@@ -114,24 +53,15 @@
 
 <script>
 import GoogleMap from "../components/GoogleMap";
+import { mapState } from "vuex";
 
 export default {
-  computed: {
-    nome() {
-      return this.$store.state.evento.nome;
-    },
-    src() {
-      return this.$store.state.evento.src;
-    },
-    lugar() {
-      return this.$store.state.evento.lugar;
-    },
-    descricao() {
-      return this.$store.state.evento.descricao;
-    }
-  },
+  name: "ComoChegar",
   components: {
     GoogleMap
+  },
+  computed: {
+    ...mapState(["eventoAtual", "restaurantes"])
   }
 };
 </script>
@@ -139,35 +69,20 @@ export default {
 <style scoped>
 .principal h1 {
   margin: 0 6% 20px;
-}
-.image {
-  height: 45vh;
-  background-size: cover;
-  background-position: center center;
-  margin-bottom: 20px;
+  text-align: center;
 }
 
-h1 {
-  margin-bottom: 20px;
-}
-
-h2 {
+.principal h1,
+.principal h2 {
   margin-bottom: 20px;
 }
 
 .section-item {
   margin-bottom: 30px;
 }
-
-h1,
-h2,
-h3 {
-  font-family: "Lato", sans-serif;
-}
 .content {
   margin: 6%;
   text-align: left;
-  font-family: "Quicksand", sans-serif;
 }
 
 *,
@@ -180,27 +95,22 @@ h3 {
   margin-bottom: 5px;
 }
 
-html {
-  background-color: #ecf9ff;
-}
-
-body {
-  color: #272727;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 0;
-  padding: 1rem;
-}
-
 .main {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-img {
+.card_image img {
   height: auto;
   max-width: 100%;
   vertical-align: middle;
+}
+
+.image {
+  height: 50vh;
+  background-size: cover;
+  background-position: center center;
+  margin-bottom: 20px;
 }
 
 .cards {
@@ -248,9 +158,8 @@ p {
 
 .card_title {
   color: #000000;
-  font-family: "Lato", sans-serif;
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 1px;
   text-transform: capitalize;
   margin: 0 0 10px 0;
@@ -266,10 +175,6 @@ p {
 
 .div-section {
   margin-bottom: 60px;
-}
-
-h1 {
-  text-align: center;
 }
 
 @media (min-width: 56rem) {

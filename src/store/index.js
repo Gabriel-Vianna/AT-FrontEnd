@@ -7,15 +7,17 @@ export default new Vuex.Store({
   state: {
     origem: "",
     destino: "",
-    evento: {
-      nome: "",
-      src: "",
-      lugar: "",
-      descricao: "",
-      lat: "",
-      lng: "",
-      restaurantes: []
-    },
+    lat: "",
+    lng: "",
+    restaurantes: [],
+    // evento: {
+    //   nome: "",
+    //   src: "",
+    //   lugar: "",
+    //   descricao: ""
+    // },
+    eventoAtual: {},
+    eventos: []
   },
   getters: {
     getOrigem(state) {
@@ -35,37 +37,50 @@ export default new Vuex.Store({
     SET_DESTINO(state, payload) {
       state.destino = payload;
     },
-    SET_NOME(state, payload) {
-      state.evento.nome = payload;
+    adicionarRestaurantes(state, payload){
+      state.restaurantes.push(payload);
     },
-    SET_SRC(state, payload) {
-      state.evento.src = payload;
-    },
-    SET_LUGAR(state, payload) {
-      state.evento.lugar = payload;
-    },
-    SET_DESCRICAO(state, payload) {
-      state.evento.descricao = payload;
-    },
+    // SET_NOME(state, payload) {
+    //   state.evento.nome = payload;
+    // },
+    // SET_SRC(state, payload) {
+    //   state.evento.src = payload;
+    // },
+    // SET_LUGAR(state, payload) {
+    //   state.evento.lugar = payload;
+    // },
+    // SET_DESCRICAO(state, payload) {
+    //   state.evento.descricao = payload;
+    // },
     SET_LAT(state, payload) {
-      state.evento.lat = payload;
+      state.lat = payload;
     },
     SET_LNG(state, payload) {
-      state.evento.lng = payload;
+      state.lng = payload;
     },
-    adicionarRestaurantes(state, restaurantes){
-      state.evento.restaurantes.push(restaurantes);
+    SET_EVENTOS(state, payload) {
+      state.eventos = payload;
+    },
+    SET_EVENTO(state, id) {
+      for (let evento of state.eventos) {
+        if (evento.id === id) {
+          state.eventoAtual = evento
+        }
+      }
     }
   },
   actions: {
+    setEvento(context, payload) {
+      context.commit("SET_EVENTO", payload);
+    },
+    setEventos(context, payload) {
+      context.commit("SET_EVENTOS", payload);
+    },
     setOrigem(context, payload) {
       context.commit("SET_ORIGEM", payload);
     },
     setDestino(context, payload) {
       context.commit("SET_DESTINO", payload);
-    },
-    setEvento(context, payload) {
-      context.commit("SET_EVENTO", payload);
     },
     setLat(context, payload) {
       context.commit("SET_LAT", payload);
@@ -89,15 +104,15 @@ export default new Vuex.Store({
       };
 
       const proxyurl = "https://cors-anywhere.herokuapp.com/";
-      console.log(state.evento.lat)
-      console.log(state.evento.lng)
+      console.log(state.eventoAtual.lat)
+      console.log(state.eventoAtual.lng)
 
       const response = await fetch(
-        proxyurl+`https://maps.googleapis.com/maps/api/place/nearbysearch/json?radius=1500&type=restaurant&location=${state.evento.lat},${state.evento.lng}&key=AIzaSyBQuJbfSamozKoKyFsnhYYgZIufPYNETME&=`,
+        proxyurl+`https://maps.googleapis.com/maps/api/place/nearbysearch/json?radius=1500&type=restaurant&location=${state.eventoAtual.lat},${state.eventoAtual.lng}&key=AIzaSyBQuJbfSamozKoKyFsnhYYgZIufPYNETME&=`,
         requestOptions
       )
       const data = await response.json();
-      let restaurantes;
+      let restaurantes = [];
 
       restaurantes.push(data.results[0], data.results[1], data.results[2], data.results[4])
       
