@@ -15,7 +15,7 @@
             </div>
             <div class="section-item">
               <h2>Quando</h2>
-              <p v-for="(data, index) in eventoAtual.datas" :key="index">{{data}}</p>
+              <p v-for="(data, index) in eventoAtual.datas" :key="index">{{ data | formataData }}</p>
             </div>
             <div class="section-item">
               <h2>Ingressos</h2>
@@ -37,10 +37,9 @@
               :key="restaurante.place_id"
             >
               <Card>
-                <!-- <template v-slot:imagem></template> -->
+                <template v-slot:imagem> <img :src=formatImage(restaurante.photos[0].photo_reference)> </template>
                 <template v-slot:titulo>{{restaurante.name}}</template>
                 <template v-slot:texto>{{restaurante.vicinity}}</template>
-                <!-- <template v-slot:botao></template> -->
               </Card>
             </li>
           </ul>
@@ -63,7 +62,15 @@ export default {
   },
   computed: {
     ...mapState(["eventoAtual", "restaurantes"])
+  },
+  methods: {
+    formatImage(image){
+      let url = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference='+image+'&key=AIzaSyBQuJbfSamozKoKyFsnhYYgZIufPYNETME'
+
+      return url;
+    }
   }
+
 };
 </script>
 

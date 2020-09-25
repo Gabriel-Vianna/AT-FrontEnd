@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="card">
-      <div class="card_image">
+      <div id="restaureImage" class="card_image">
         <slot name="imagem"></slot>
       </div>
-      <div class="card_content">
+      <div id="cardContent" class="card_content">
         <h2 class="card_title">
           <slot name="titulo"></slot>
         </h2>
@@ -18,10 +18,23 @@
 </template>
 <script>
 export default {
-  name: "Card"
+  name: "Card",
+  props: {
+    imagem: String
+  }
 };
 </script>
 <style>
+
+#restaureImage{
+  width: 250px;
+  height: 130px;
+}
+
+#cardContent{
+  height: 150px;
+}
+
 .principal h1 {
   margin: 0 6% 20px;
   text-align: center;

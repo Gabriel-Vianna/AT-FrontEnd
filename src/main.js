@@ -14,6 +14,17 @@ Vue.filter('formatDescription', (string) => {
   return string + '...';
 })
 
+Vue.filter('formataData', (data) =>{
+  let newData = data.split('-');
+  return newData[2]+'/'+newData[1]+'/'+newData[0];
+})
+
+Vue.filter('formatImage', (image) => {
+  let url = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference='+image+'&key=AIzaSyBQuJbfSamozKoKyFsnhYYgZIufPYNETME'
+
+  return url;
+})
+
 Vue.use(VueGoogleMaps, {
   load: {
     key: "AIzaSyBQuJbfSamozKoKyFsnhYYgZIufPYNETME",

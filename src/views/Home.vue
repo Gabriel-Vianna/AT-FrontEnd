@@ -73,6 +73,10 @@ export default {
   height: 55%;
 }
 
+img{
+  height: 220px !important;
+  width: 400px !important;
+}
 .main {
   max-width: 1200px;
   margin: 80px auto;
