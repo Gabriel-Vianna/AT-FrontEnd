@@ -31,8 +31,17 @@
         <h3>Onde comer:</h3>
         <div class="main">
           <ul class="cards">
-            <li class="cards_item" v-for="restaurante in restaurantes" :key="restaurante.restaurante">
-              <Card :restaurante="restaurante"></Card>
+            <li
+              class="cards_item"
+              v-for="restaurante in restaurantes[0]"
+              :key="restaurante.place_id"
+            >
+              <Card>
+                <!-- <template v-slot:imagem>{{restaurante.photos[0]}}</template> -->
+                <template v-slot:titulo>{{restaurante.name}}</template>
+                <template v-slot:texto>{{restaurante.vicinity}}</template>
+                <template v-slot:botao></template>
+              </Card>
             </li>
           </ul>
         </div>
