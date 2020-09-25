@@ -37,10 +37,10 @@
               :key="restaurante.place_id"
             >
               <Card>
-                <!-- <template v-slot:imagem>{{restaurante.photos[0]}}</template> -->
+                <!-- <template v-slot:imagem></template> -->
                 <template v-slot:titulo>{{restaurante.name}}</template>
                 <template v-slot:texto>{{restaurante.vicinity}}</template>
-                <template v-slot:botao></template>
+                <!-- <template v-slot:botao></template> -->
               </Card>
             </li>
           </ul>
